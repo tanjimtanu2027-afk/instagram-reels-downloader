@@ -50,7 +50,7 @@ pip install flask yt-dlp
   ```
 - Start the server:
   ```bash
-  python reel-download..py
+  python reel-download.py
   ```
 
 (Once started, you will see a local link: http://localhost:5000)
