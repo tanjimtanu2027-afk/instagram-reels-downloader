@@ -1,50 +1,62 @@
 # Instagram Reel Downloader
 
-Apnar ei project-ti ekdom complete ebong darun ekta application hoyeche! 🚀
+A Flask-based web app with a beautiful dark-themed UI for downloading Instagram Reels. Supports single and batch (multiple) downloads with real-time progress bars via Server-Sent Events (SSE). Videos are saved to your phone's Download folder using yt-dlp.
 
-Kono new user jodi apnar ei Instagram Downloader-ti nijer phone-e setup kore use korte chay, tahole take prothome Termux-er maddhome kichu basic setup kore nite hobe.
+## Features
 
-## New User-der Jonno Setup Guide:
+- **Single Download**: Paste one Instagram Reel link and download instantly
+- **Batch Download**: Paste multiple links (newline or comma separated) and download them all at once
+- **Live Progress**: Real-time percentage progress bars with smooth animation
+- **Zero Config**: Works out of the box on Android via Termux
 
-### Step 1: Termux App Install Korun
-Prothome phone-e Termux app (F-Droid ba GitHub theke updated version) install korte hobe (Google Play Store-er version-ti ekhon outdated).
+## Setup Guide (New Users)
 
-### Step 2: Storage Permission & Packages Install Korun
-Termux open kore nicher command-gulo ekta ekta kore run korun:
+If you want to run this on your Android phone, follow the steps below:
+
+### Step 1: Install Termux App
+Install Termux from **F-Droid** or GitHub (the Google Play Store version is outdated).
+
+### Step 2: Grant Storage Permission & Install Packages
+Open Termux and run these commands one by one:
 
 ```bash
-# 1. Termux update and upgrade korun
+# 1. Update and upgrade Termux
 pkg update && pkg upgrade -y
 
-# 2. Phone storage permission din (Jate video Download folder-e save hoy)
+# 2. Grant storage permission (so videos save to your Download folder)
 termux-setup-storage
 
-# 3. Python ebong FFmpeg (Video processing-er jonno mandatory) install korun
+# 3. Install Python and FFmpeg (required for video processing)
 pkg install python ffmpeg -y
 ```
 
-(Storage command dile phone theke permission chaibe, seta Allow kore dite hobe).
+*(After running the storage command, your phone will ask for permission — tap Allow.)*
 
-### Step 3: Required Python Libraries Install Korun
-Ebar python-er server ebong downloader libraries-gulo install korte hobe:
-
+### Step 3: Install Required Python Libraries
 ```bash
 pip install flask yt-dlp
 ```
 
-### Step 4: app.py File Toiri Korun
-* Termux-e ekta notun file open korun:
-  `nano app.py`
-* Apnar kache thaka full code-ti (reel-download..py) copy kore oi Nano editor-e paste kore din.
-* Save korar jonno: Keyboard theke **Ctrl + x** chapaun, tarpor **y** din, shese **Enter** press korun.
+### Step 4: Create the App File
+- Open a new file in Termux:
+  ```bash
+  nano app.py
+  ```
+- Copy the full code from `reel-download..py` and paste it into the Nano editor.
+- Save: press **Ctrl + x**, then **y**, then **Enter**.
 
-### Step 5: Server Run Korun
-File save howar por server start korar jonno run korun:
-`python app.py`
+### Step 5: Run the Server
+```bash
+python app.py
+```
 
-(Server start hole ekti local link show korbe: http://localhost:5000)
+(Once started, you will see a local link: http://localhost:5000)
 
-### Step 6: Browser theke Use Korun
-* Apnar phone-er jekono web browser (jemon Google Chrome) open korun.
-* Address bar-e likhun: `http://localhost:5000`
-* Besh! Ebar samne sundor UI chole asbe jekhan theke Single Download ba Multiple Batch Download (0%-100% live animation soho) use kore direct phone-er Download folder-e video namiye nite parben.
+### Step 6: Open in Browser
+- Open any web browser on your phone (e.g., Chrome).
+- Go to: **http://localhost:5000**
+- The app will load with a clean UI. Choose between **Single Download** or **Multiple Batch Download** (both show live 0–100% progress animations). Videos are saved directly to your phone's **Download** folder.
+
+---
+
+Enjoy! 🎉
