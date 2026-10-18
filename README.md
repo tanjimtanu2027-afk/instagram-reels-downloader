@@ -26,8 +26,8 @@ pkg update && pkg upgrade -y
 # 2. Grant storage permission (so videos save to your Download folder)
 termux-setup-storage
 
-# 3. Install Python and FFmpeg (required for video processing)
-pkg install python ffmpeg -y
+# 3. Install Git, Python, and FFmpeg (required for repository cloning and video processing)
+pkg install git python ffmpeg -y
 ```
 
 *(After running the storage command, your phone will ask for permission — tap Allow.)*
@@ -37,18 +37,21 @@ pkg install python ffmpeg -y
 pip install flask yt-dlp
 ```
 
-### Step 4: Create the App File
-- Open a new file in Termux:
+### Step 4: Clone the Repository
+- Clone the project files from GitHub:
   ```bash
-  nano app.py
+  git clone https://github.com/tanjimtanu2027-afk/instagram-reels-downloader
   ```
-- Copy the full code from `reel-download..py` and paste it into the Nano editor.
-- Save: press **Ctrl + x**, then **y**, then **Enter**.
 
 ### Step 5: Run the Server
-```bash
-python app.py
-```
+- Enter the project directory:
+  ```bash
+  cd instagram-reels-downloader
+  ```
+- Start the server:
+  ```bash
+  python reel-download..py
+  ```
 
 (Once started, you will see a local link: http://localhost:5000)
 
